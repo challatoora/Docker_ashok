@@ -28,6 +28,7 @@ services:
       depends_on:
       - catalogue
       - user
+      - Cart
   
   Cart:
     build:
@@ -35,6 +36,8 @@ services:
       dockerfile: Dockerfile
     image: user:1.0.0
     container_name: Cart
+    depends_on:
+    - redis
 
   mongodb:
     build:
