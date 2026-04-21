@@ -16,7 +16,16 @@ services:
     container_name: user
     depends_on:
     - redis
-  
+
+  Cart:
+    build:
+      context: ./Cart
+      dockerfile: Dockerfile
+    image: user:1.0.0
+    container_name: Cart
+    depends_on:
+    - redis
+
   frontend:
       build:
         context: ./frontend
@@ -30,14 +39,7 @@ services:
       - user
       - Cart
   
-  Cart:
-    build:
-      context: ./Cart
-      dockerfile: Dockerfile
-    image: user:1.0.0
-    container_name: Cart
-    depends_on:
-    - redis
+
 
   mongodb:
     build:
