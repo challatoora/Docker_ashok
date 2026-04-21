@@ -21,7 +21,7 @@ services:
     build:
       context: ./Cart
       dockerfile: Dockerfile
-    image: Cart:1.0.0
+    image: cart:1.0.0
     container_name: Cart
     depends_on:
     - redis
