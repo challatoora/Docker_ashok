@@ -24,7 +24,7 @@ services:
       image: frontend:1.0.0
       container_name: usfrontender
       depends_on:
-      - CATALOGUE
+      - catalogue
       - user
 
   mongodb:
