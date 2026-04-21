@@ -28,6 +28,13 @@ services:
       depends_on:
       - catalogue
       - user
+  
+  Cart:
+    build:
+      context: ./Cart
+      dockerfile: Dockerfile
+    image: user:1.0.0
+    container_name: Cart
 
   mongodb:
     build:
