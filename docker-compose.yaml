@@ -1,6 +1,7 @@
 services:
   catalogue:
     build:
+      context: .
       dockerfile: CATALOGUE.Dockerfile
     image: catalogue:1.0.0
     container_name: catalogue
@@ -9,7 +10,8 @@ services:
 
   mongodb:
     build:
-      dockerfile: mongodb.Dockerfile
+      context: ./mongodb
+      dockerfile: Dockerfile
     image: mongodb:1.0.0
     container_name: mongodb
 
